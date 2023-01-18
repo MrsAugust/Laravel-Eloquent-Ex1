@@ -19,11 +19,11 @@ class PostCategories extends Model
      */
     public function categories()
     {
-        return $this->belongsToMany(Categories::class, 'foreign_key');
+        return $this->hasMany(Categories::class, 'foreign_key');
     }
 
     public function posts()
     {
-        return $this->belongsToMany(Posts::class, 'foreign_key');
+        return $this->hasMany(Posts::class, 'foreign_key');
     }
 }

@@ -19,12 +19,12 @@ class Posts extends Model
     public function post_categories()
     {
 
-        return $this->hasMany(Categories::class, 'foreign_key');
+        return $this->belongsToMany(PostCategories::class, 'post_categories');
     }
 
     public function user()
     {
 
-        return $this->belongsTo(User::class)->withDefault();
+        return $this->belongsTo(User::class, 'author_id', 'id');
     }
 }
