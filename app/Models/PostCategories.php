@@ -9,6 +9,11 @@ class PostCategories extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'post_id',
+        'category_id',
+    ];
+
     /**
      * Get the details of the category
      */
